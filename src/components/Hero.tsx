@@ -139,7 +139,7 @@ export default function Hero({ onNavigate }: HeroProps) {
                   <p>&gt; calcflow --cluster init</p>
                   <p className="text-emerald-400">✓ Connected to Quantum Addition Pipeline</p>
                   <p>&gt; evaluate "420 + 69"</p>
-                  <p className="text-teal-300">Evaluating multi-layered addition tensors...</p>
+                  <p className="text-sky-300">Evaluating multi-layered addition tensors...</p>
                 </div>
                 <div className="text-right border-t border-white/10 pt-2">
                   <p className="text-[10px] text-sidebar-foreground/50">OPTIMIZED SOLUTION</p>

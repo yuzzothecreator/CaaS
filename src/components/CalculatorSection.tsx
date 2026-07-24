@@ -337,7 +337,7 @@ export default function CalculatorSection({ currentTier, onTriggerUpgrade }: Cal
 
                 <div className="min-h-[44px] flex items-end justify-end text-3xl sm:text-4xl font-bold tracking-tight mt-1 truncate font-mono text-white">
                   {isComputing ? (
-                    <span className="text-sm font-mono text-teal-300 animate-pulse flex items-center gap-1.5">
+                    <span className="text-sm font-mono text-sky-300 animate-pulse flex items-center gap-1.5">
                       <RefreshCw className="h-4 w-4 animate-spin" />
                       COMPUTING...
                     </span>
