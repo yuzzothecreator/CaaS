@@ -1,0 +1,6 @@
+{
+  "name": "CalcFlow",
+  "description": "The World's Most Advanced Calculator Platform. Powering enterprise arithmetic with next-generation AI-powered mathematics.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
