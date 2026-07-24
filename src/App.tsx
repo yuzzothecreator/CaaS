@@ -61,7 +61,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 font-sans antialiased text-slate-200">
+    <div className="min-h-screen bg-background font-sans antialiased text-foreground">
       {/* Navbar always accessible */}
       <Navbar
         currentTier={currentTier}

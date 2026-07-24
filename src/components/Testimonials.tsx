@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Star, Shield, Quote, Heart, CheckCircle2 } from 'lucide-react';
+import { Star, CheckCircle2 } from 'lucide-react';
 
 export default function Testimonials() {
   const reviews = [
@@ -28,7 +28,7 @@ export default function Testimonials() {
     {
       name: 'Sarah Jenkins',
       role: 'Senior Non-Mathematician, Slingshot Media',
-      text: 'I do not understand math, which is why I love CalcFlow. We pay $299/mo so that when I type 100 * 15%, a high-performance machine learning model executes the percentage calculations. The premium amber-color badge next to my profile photo is incredible.',
+      text: 'I do not understand math, which is why I love CalcFlow. We pay $299/mo so that when I type 100 * 15%, a high-performance machine learning model executes the percentage calculations. The premium badge next to my profile photo is incredible.',
       avatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=150&auto=format&fit=crop',
       rating: 5,
     },
@@ -49,63 +49,53 @@ export default function Testimonials() {
   ];
 
   return (
-    <section className="py-24 bg-slate-950 border-t border-white/5 relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 h-[600px] w-[600px] rounded-full bg-pink-500/5 blur-[150px] pointer-events-none" />
-
+    <section className="py-24 bg-background relative">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs font-bold uppercase tracking-widest text-pink-500">Global Customer Validation</span>
-          <h2 className="font-display text-3xl font-extrabold tracking-tight text-white sm:text-4xl mt-3">
-            What Mathematical Leaders Are Saying
+        <div className="max-w-2xl mb-14">
+          <span className="text-xs font-semibold uppercase tracking-widest text-primary">
+            Customer Validation
+          </span>
+          <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl mt-3 text-balance">
+            What mathematical leaders are saying
           </h2>
-          <p className="text-slate-400 mt-4 text-sm sm:text-base leading-relaxed">
-            From Fortune 500 financial brokers to amateur subtraction specialists, 
-            CalcFlow is trusted to maintain perfect 1+1 arithmetic alignments.
+          <p className="text-muted-foreground mt-4 text-sm sm:text-base leading-relaxed text-pretty">
+            From Fortune 500 brokers to amateur subtraction specialists, CalcFlow keeps 1+1 alignments
+            perfect.
           </p>
         </div>
 
-        {/* Testimonials Bento Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {reviews.map((item, idx) => (
             <motion.div
               key={idx}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: idx * 0.05 }}
-              className="glass-panel rounded-2xl p-6 flex flex-col justify-between hover:border-white/15 transition-all"
+              transition={{ duration: 0.35, delay: idx * 0.04 }}
+              className="rounded-2xl border border-border bg-card p-6 flex flex-col justify-between shadow-sm transition-all duration-300 hover:shadow-md"
             >
               <div>
-                {/* Rating */}
-                <div className="flex gap-1 text-amber-400 mb-4">
+                <div className="flex gap-1 text-amber-500 mb-4">
                   {[...Array(item.rating)].map((_, rIdx) => (
                     <Star key={rIdx} className="h-4 w-4 fill-amber-400" />
                   ))}
                 </div>
-
-                {/* Text quote */}
-                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed italic relative">
-                  <span className="absolute -top-3 -left-2 text-3xl text-slate-800 font-serif select-none">"</span>
-                  {item.text}
-                </p>
+                <p className="text-sm text-foreground/80 leading-relaxed text-pretty">{item.text}</p>
               </div>
 
-              {/* User Bio row */}
-              <div className="mt-6 flex items-center gap-3 border-t border-white/5 pt-4">
+              <div className="mt-6 flex items-center gap-3 border-t border-border pt-4">
                 <img
                   src={item.avatar}
                   alt={item.name}
                   referrerPolicy="no-referrer"
-                  className="h-10 w-10 rounded-full object-cover border border-white/10"
+                  className="h-10 w-10 rounded-full object-cover border border-border"
                 />
                 <div>
-                  <h4 className="font-display font-bold text-white text-xs flex items-center gap-1">
+                  <h4 className="font-semibold text-foreground text-sm flex items-center gap-1">
                     {item.name}
-                    <CheckCircle2 className="h-3.5 w-3.5 text-blue-400 fill-blue-500/10 shrink-0" />
+                    <CheckCircle2 className="h-3.5 w-3.5 text-primary shrink-0" />
                   </h4>
-                  <p className="text-4xs text-slate-500 font-mono mt-0.5">{item.role}</p>
+                  <p className="text-[11px] text-muted-foreground font-mono mt-0.5">{item.role}</p>
                 </div>
               </div>
             </motion.div>
